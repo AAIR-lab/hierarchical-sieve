@@ -1,0 +1,12 @@
+A B {"label": "x1+1"}
+B C {"label": "x1+1"}
+C D {"label": "x1+1"}
+D E {"label": "x1-1"}
+E F {"label": "x1-1"}
+F G {"label": "x1-1"}
+G H {"label": "x1-1"}
+H A {"label": "x1-1"}
+D I {"label": "x1-1"}
+I J {"label": "x1+1"}
+J A {"label": "x1-1"}
+

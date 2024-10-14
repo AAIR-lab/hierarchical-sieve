@@ -1,0 +1,11 @@
+T_DET_dependent_edge_list_jumps3.txt
+
+When DETerminer doesn't detect termination, DET is such that B->CEDF->B is considered as a net-zero path and this prevents x1 from being pruned.
+
+When it determines termination, the DET does not have a net-zero path on x1; every path has x1 as a net-decrease variable.
+
+If a variable participates in no net positive paths
+some net negative paths
+and some net zero paths
+
+can we remove edges that reduce it and participate only in paths that  have a net negative change on that variable?

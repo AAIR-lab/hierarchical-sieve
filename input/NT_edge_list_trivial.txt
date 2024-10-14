@@ -1,0 +1,2 @@
+A B {"label": "x1-1"}
+B A {"label": "x1+1"}
