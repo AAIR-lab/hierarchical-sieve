@@ -154,15 +154,17 @@ class FMP:
                    print("will remove edge  "+ repr(e))
         return rm_list
 
-    def get_dec_vars_for_G(self):
+    def get_dec_vars_for_G(self, output_dir):
         progress = True
         iteration = 0
         while progress:
             iteration += 1
-            gu.draw_viz("o_G" + repr(iteration)+".pdf", self.G)
+            gu.draw_viz("o_G" + repr(iteration)+".pdf", 
+                output_dir=output_dir, graph=self.G)
 
             self.generate_DEF()
-            gu.draw_viz("o_DET" + repr(iteration)+ ".pdf", self.DEF.forest)
+            gu.draw_viz("o_DET" + repr(iteration)+ ".pdf",
+                output_dir=output_dir, graph=self.DEF.forest)
 
             pi_vars, pz_vars = self.get_pot_inc_or_zero_change_vars_for_G()
 

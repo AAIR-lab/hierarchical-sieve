@@ -35,7 +35,7 @@ def get_DET_graph_for_drawing(graph):
         B.add_edge(get_gv_node_name(x), get_gv_node_name(y))
     return B
 
-def draw_viz(fname="test.png", graph=None):
+def draw_viz(fname="test.png", output_dir="output/", graph=None):
     #return
     print("drawing graph " + fname)
     if graph is None:
@@ -54,9 +54,9 @@ def draw_viz(fname="test.png", graph=None):
 
     ofname = fname.split(".")[0]
 
-    A.write("output/" + ofname + ".dot")
+    A.write(output_dir + "/" + ofname + ".dot")
     #A.layout(prog="dot", args=" -Gratio=0.5")
-    A.draw("output/" + ofname + ".pdf", format="pdf", prog="dot", \
+    A.draw(output_dir + "/" + ofname + ".pdf", format="pdf", prog="dot", \
            args="-Gratio=1, -Goverlap=false, -Gsplines=true, -Gmindist=1")
 
 def get_through_paths(graph, entry_points, exit_points):

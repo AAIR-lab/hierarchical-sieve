@@ -14,7 +14,14 @@ import sys
 if __name__ == '__main__':
     DETermined = False
     sieved = False
-    while (not DETermined) or sieved:
+
+    FILEPATH = "external/hierarchical-sieve/input/T_phi8_10q_7vars.txt"
+    OUTPUT_DIR = "/tmp/hsieve"
+    done = False
+    while (not DETermined) and (not sieved) and (not done):
+        
+        done = True
+        
         #cleanup output area
         ofiles = glob.glob("output/o_*.*")
         for file in ofiles:
@@ -28,11 +35,11 @@ if __name__ == '__main__':
         #random.seed()
 
         f = graphs.FMP()
-        f.initialize("input/T_phi8_10q_7vars.txt")
+        f.initialize(FILEPATH)
         #f.initialize("input/T_rand.txt")
 
 
-        DETermined = f.get_dec_vars_for_G()
+        DETermined = f.get_dec_vars_for_G(OUTPUT_DIR)
         if DETermined:
             print("DETerminator asserts termination")
         else:
