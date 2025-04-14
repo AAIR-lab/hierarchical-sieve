@@ -4,7 +4,7 @@ import random
 import graphs
 import graph_utils
 
-def hierarchical_sieve(fmp_filepath, output_dir, seed=None, k=10):
+def run(fmp_filepath, output_dir, seed=None, k=10):
 
     assert output_dir is not None
     DETermined = False

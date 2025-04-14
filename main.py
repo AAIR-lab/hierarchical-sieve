@@ -1,6 +1,6 @@
 import os
 import argparse
-from hierarchical_sieve import hierarchical_sieve
+import hierarchical_sieve
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -9,7 +9,7 @@ if __name__ == '__main__':
     import shutil
     import pathlib    
     ROOT_DIR = pathlib.Path(__file__).parent.as_posix()
-    DEFAULT_FMP_FILEPATH = "%s/input/T_phi8_10q_7vars.txt" % (ROOT_DIR)
+    DEFAULT_FMP_FILEPATH = "/tmp/graph.txt"
     DEFAULT_OUTPUT_DIR = "%s/output" % (ROOT_DIR)
 
     parser = argparse.ArgumentParser()
@@ -28,7 +28,8 @@ if __name__ == '__main__':
         shutil.rmtree(args.output_dir, ignore_errors=True)
     
     os.makedirs(args.output_dir, exist_ok=True)    
-    DETermined, sieved, num_iter = hierarchical_sieve(args.fmp_filepath,
+    DETermined, sieved, num_iter = hierarchical_sieve.run(
+        args.fmp_filepath,
         args.output_dir, args.k)
 
     if DETermined:
